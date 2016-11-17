@@ -1,0 +1,28 @@
+<IfModule mod_rewrite.c>
+
+	#Options +FollowSymLinks
+	Options -Indexes
+	RewriteEngine on
+	
+	<Files *.php>
+		Order Deny,Allow
+		Deny from all
+		Allow from 127.0.0.1
+	</Files>
+	<Files index.php>
+		Order Allow,Deny
+		Allow from all
+	</Files>
+	<Files 404.php>
+		Order Allow,Deny
+		Allow from all
+	</Files>
+
+	# Send request via index.php
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index.php?include=404 [L]
+	
+	RewriteRule ^ny_ordre$ index.php?include=ny_ordre [QSA]
+
+</IfModule>

@@ -1,0 +1,6 @@
+.reports{
+	display: none;
+	background-color: gray;
+	position: fixed;
+	z-index: 20;
+}

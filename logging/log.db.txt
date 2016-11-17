@@ -1,0 +1,1 @@
+14.11.16 15:39 : SQLSTATE[28000] [1045] Access denied for user 'www-data'@'localhost' (using password: NO)
